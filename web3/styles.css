@@ -1,0 +1,109 @@
+:root {
+    --primary-text: #1a1a1a;        /* Near-Black for main text */
+    --secondary-text: #666;        /* Grey for subtle text/details */
+    --accent-color: #B87333;       /* Bronze/Gold for highlights (elegant) */
+    --light-background: #fdfcf9;   /* Off-white/Cream for soft background */
+    --hover-background: #f0f0f0;   /* Light grey for hover effects */
+    --event-highlight: #A52A2A;    /* Deep Red for 'New' or 'VIP' event markers */
+    --border-color: #ddd;
+    --font-stack: 'Didot', 'Georgia', serif; /* Elegant, classic font */
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--light-background);
+    color: var(--primary-text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.event-schedule {
+    width: 100%;
+    border-collapse: separate; /* Allows border-radius on cells */
+    border-spacing: 0;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+}
+
+.event-schedule thead th {
+    background-color: var(--primary-text);
+    color: var(--light-background);
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.event-schedule thead th:first-child {
+    border-top-left-radius: 8px;
+}
+.event-schedule thead th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.event-schedule tbody td {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.event-schedule tbody tr:nth-child(even) {
+    background-color: var(--hover-background);
+}
+
+.event-schedule tbody tr:hover {
+    background-color: #e6e6e6; /* Slightly darker on hover */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.event-schedule .event-time {
+    font-weight: bold;
+    color: var(--accent-color);
+    width: 15%; /* Keep the time column narrow */
+}
+
+.event-schedule .event-name {
+    font-size: 1.1em;
+}
+
+\.event-schedule .highlight-tag {
+    display: inline-block;
+    background-color: var(--event-highlight);
+    color: var(--light-background);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+\.event-schedule .status.available {
+    color: green;
+    font-weight: bold;
+}
+.event-schedule .status.booked-out {
+    color: red;
+    font-weight: bold;
+}
+
+.event-schedule tbody tr:last-child td {
+    border-bottom: none;
+}
